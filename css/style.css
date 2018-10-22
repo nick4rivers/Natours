@@ -8,21 +8,29 @@ Dark green: #28b485
 */
 
 /*reset browser settings*/
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+/* set root settings */
+html {
+  /* set fontsize to desired.px / default.px size i.e. 10px / 16px */
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
-
 
 /****************
 HEADER
@@ -40,23 +48,23 @@ HEADER
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
-.logo {
-  height: 35px;
+.header__logo {
+  height: 3.5rem;
   transition: all .2s ease-in-out;
 }
 
-.logo:hover {
+.header__logo:hover {
     transform: scale(1.5);
-  }
+}
 
 /*exactly center elements on parent*/
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -72,22 +80,22 @@ HEADER
   backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 30px;
+  letter-spacing: 3rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 16px;
+  letter-spacing: 1.6rem;
 
   animation-name: moveInRight;
   animation-duration: 1s;
@@ -101,12 +109,12 @@ Header Animations
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
     opacity: 1;
-    transform: translate(10px);
+    transform: translate(1rem);
   }
 
   100% {
@@ -118,12 +126,12 @@ Header Animations
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
     opacity: 1;
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -139,26 +147,26 @@ Header Animations
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all .2s;
-  box-shadow: 0 1px 5px #00000033;
+  box-shadow: 0 .1rem .5rem #00000033;
   position: relative;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px #00000033;
+  box-shadow: 0 1rem 2rem #00000033;
 }
 
 .btn:active{
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px #00000033;
+  transform: translateY(-1rem);
+  box-shadow: 0 .5rem 1rem #00000033;
 
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -166,7 +174,7 @@ Header Animations
 @keyframes moveUpButton {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(5rem);
   }
 
   100% {
@@ -175,7 +183,7 @@ Header Animations
   }
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveUpButton .5s ease-out .75s;
   animation-fill-mode: backwards;
 }

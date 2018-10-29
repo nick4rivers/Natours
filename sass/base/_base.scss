@@ -1,0 +1,18 @@
+/*reset browser settings*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* set root settings */
+html {
+  /* set fontsize to desired.px / default.px size i.e. 10px / 16px */
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
